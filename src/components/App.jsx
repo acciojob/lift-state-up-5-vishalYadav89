@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import './../styles/App.css';
 import LoginForm from './LoginForm.jsx';
@@ -9,7 +8,6 @@ const App = () => {
   const handleLogin = ()=>{
     setIsLoggedIn(true);
   };
-
   return (
     <div>
         {/* Do not remove the main div */}
