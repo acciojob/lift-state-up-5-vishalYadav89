@@ -4,9 +4,21 @@ import LoginForm from './LoginForm.jsx';
 
 const App = () => {
   const [isLoggedIn , setIsLoggedIn] = useState(false);
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   
   const handleLogin = ()=>{
-    setIsLoggedIn(true);
+    if(username && password) {
+      setIsLoggedIn(true);
+    } else {
+      alert('Please enter username and password');
+    }
+  };
+  
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    setUsername('');
+    setPassword('');
   };
   return (
     <div>
@@ -15,6 +27,11 @@ const App = () => {
         <LoginForm
           isLoggedIn={isLoggedIn}
           onLogin={handleLogin}
+          onLogout={handleLogout}
+          username={username}
+          password={password}
+          setUsername={setUsername}
+          setPassword={setPassword}
         />
     </div>
   )
